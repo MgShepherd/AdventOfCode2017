@@ -1,35 +1,27 @@
 package problem1
 
-import "testing"
-
-type testData struct {
-	input    string
-	expected int
-	part     int
-}
+import (
+	utils "AdventOfCode/Utils"
+	"testing"
+)
 
 func TestSolve(t *testing.T) {
-	problem := Problem1{}
-	testCases := []testData{
-		{part: 1, input: "1122", expected: 3},
-		{part: 1, input: "1111", expected: 4},
-		{part: 1, input: "1234", expected: 0},
-		{part: 1, input: "91212129", expected: 9},
-		{part: 1, input: "91212129 ", expected: 9},
-		{part: 1, input: "", expected: 0},
-		{part: 2, input: "1212", expected: 6},
-		{part: 2, input: "1221", expected: 0},
-		{part: 2, input: "123425", expected: 4},
-		{part: 2, input: "123123", expected: 12},
-		{part: 2, input: "123123 ", expected: 12},
-		{part: 2, input: "12131415", expected: 4},
-		{part: 2, input: "", expected: 0},
+	problem := &Problem1{}
+	testCases := []utils.TestData{
+		{Part: 1, Input: "1122", Expected: 3},
+		{Part: 1, Input: "1111", Expected: 4},
+		{Part: 1, Input: "1234", Expected: 0},
+		{Part: 1, Input: "91212129", Expected: 9},
+		{Part: 1, Input: "91212129 ", Expected: 9},
+		{Part: 1, Input: "", Expected: 0},
+		{Part: 2, Input: "1212", Expected: 6},
+		{Part: 2, Input: "1221", Expected: 0},
+		{Part: 2, Input: "123425", Expected: 4},
+		{Part: 2, Input: "123123", Expected: 12},
+		{Part: 2, Input: "123123 ", Expected: 12},
+		{Part: 2, Input: "12131415", Expected: 4},
+		{Part: 2, Input: "", Expected: 0},
 	}
 
-	for _, testCase := range testCases {
-		actual := problem.Solve(testCase.input, testCase.part)
-		if actual != testCase.expected {
-			t.Errorf("Wrong output for input %q, expected %d but got %d", testCase.input, testCase.expected, actual)
-		}
-	}
+	utils.CheckTestCases(t, problem, testCases)
 }
