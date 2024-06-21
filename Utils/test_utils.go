@@ -5,13 +5,13 @@ import (
 	"testing"
 )
 
-type TestData struct {
-	Input    string
+type TestData[T any] struct {
+	Input    T
 	Expected int
 	Part     int
 }
 
-func CheckTestCases(t *testing.T, problem problems.Problem, testCases []TestData) {
+func CheckTestCases(t *testing.T, problem problems.Problem, testCases []TestData[string]) {
 	for _, testCase := range testCases {
 		actual := problem.Solve(testCase.Input, testCase.Part)
 		if actual != testCase.Expected {
