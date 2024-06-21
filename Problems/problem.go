@@ -1,5 +1,5 @@
 package problems
 
 type Problem interface {
-	Solve(fileName string)
+	Solve(data string, part int) int
 }
