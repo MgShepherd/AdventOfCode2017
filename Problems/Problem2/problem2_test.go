@@ -7,7 +7,7 @@ import (
 
 func TestSolve(t *testing.T) {
 	problem := &Problem2{}
-	testCases := []utils.TestData[string]{
+	testCases := []utils.TestData{
 		{Part: 1, Input: "5 1 9 5", Expected: 8},
 		{Part: 1, Input: "7 5 3", Expected: 4},
 		{Part: 1, Input: "7 5 3  ", Expected: 4},
