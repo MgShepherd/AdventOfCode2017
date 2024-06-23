@@ -1,12 +1,12 @@
 package main
 
 import (
-	problem4 "AdventOfCode/Problems/Problem4"
+	problem5 "AdventOfCode/Problems/Problem5"
 	utils "AdventOfCode/Utils"
 	"fmt"
 )
 
 func main() {
-	problem := problem4.Problem4{}
-	fmt.Println(problem.Solve(utils.ReadProblemFile(4), 2))
+	problem := problem5.Problem5{}
+	fmt.Println(problem.Solve(utils.ReadProblemFile(5), 2))
 }
