@@ -1,5 +1,9 @@
 package problems
 
-type Problem interface {
-	Solve(data string, part int) int
+type ProblemOutput interface {
+	int | string
+}
+
+type Problem[T ProblemOutput] interface {
+	Solve(data string, part int) T
 }

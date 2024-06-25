@@ -5,17 +5,17 @@ import (
 	"testing"
 )
 
-type TestData struct {
+type TestData[T problems.ProblemOutput] struct {
 	Input    string
-	Expected int
+	Expected T
 	Part     int
 }
 
-func CheckTestCases(t *testing.T, problem problems.Problem, testCases []TestData) {
+func CheckTestCases[T problems.ProblemOutput](t *testing.T, problem problems.Problem[T], testCases []TestData[T]) {
 	for _, testCase := range testCases {
 		actual := problem.Solve(testCase.Input, testCase.Part)
 		if actual != testCase.Expected {
-			t.Errorf("Wrong output for Input %v, Expected %d but got %d", testCase.Input, testCase.Expected, actual)
+			t.Errorf("Wrong output for Input %v, Expected %v but got %v", testCase.Input, testCase.Expected, actual)
 		}
 	}
 }
